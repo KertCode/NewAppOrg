@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178
+VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{C10B205B-91D4-4DE4-B82B-5DA18185E7D3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{66844907-90F8-4C3B-A998-5BC0812F102B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{6AC01F8A-043E-4C10-945F-D7F6755AE925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +15,6 @@ Global
 		{C10B205B-91D4-4DE4-B82B-5DA18185E7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C10B205B-91D4-4DE4-B82B-5DA18185E7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C10B205B-91D4-4DE4-B82B-5DA18185E7D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66844907-90F8-4C3B-A998-5BC0812F102B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66844907-90F8-4C3B-A998-5BC0812F102B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66844907-90F8-4C3B-A998-5BC0812F102B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66844907-90F8-4C3B-A998-5BC0812F102B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AC01F8A-043E-4C10-945F-D7F6755AE925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AC01F8A-043E-4C10-945F-D7F6755AE925}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AC01F8A-043E-4C10-945F-D7F6755AE925}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AC01F8A-043E-4C10-945F-D7F6755AE925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
