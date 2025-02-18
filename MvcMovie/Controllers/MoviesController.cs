@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
-using MvcMovie.Models;
+using MvcMovieISA2.Domain;
+using MvcMovieISA2.MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {

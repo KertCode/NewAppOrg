@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MvcMovieISA2.Domain;
 
-namespace MvcMovie.Models;
+namespace MvcMovieISA2.MvcMovie.Models;
 
 public class MovieGenreViewModel
 {
