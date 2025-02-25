@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcMovieISA2.Domain;
 
-public class Movie
-{
-    public int Id { get; set; }
+public class Movie : Entity {
 
     [StringLength(60, MinimumLength = 3)]
     [Required]

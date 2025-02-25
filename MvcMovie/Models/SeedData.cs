@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
+using MvcMovieISA2.Domain;
 
 namespace MvcMovie.Models;
 
