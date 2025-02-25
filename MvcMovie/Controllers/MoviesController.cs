@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovieISA2.Domain;
+using MvcMovieISA2.Infra;
 using MvcMovieISA2.MvcMovie.Models;
 
 namespace MvcMovie.Controllers
@@ -10,6 +10,7 @@ namespace MvcMovie.Controllers
     public class MoviesController(MvcMovieContext c) : Controller
     {
         private readonly MvcMovieContext db = c;
+        private readonly Repo<Movie> repo = new(c);
 
         public async Task<IActionResult> Index(string movieGenre, string searchString)
         {
@@ -24,8 +25,8 @@ namespace MvcMovie.Controllers
 
             var movieGenreVM = new MovieGenreViewModel
             {
-                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Movies = await movies.ToListAsync()
+                Genres = new SelectList(await repo.Get()),
+                Movies = await repo.Get()
             };
 
             return View(movieGenreVM);
@@ -36,7 +37,7 @@ namespace MvcMovie.Controllers
 
         public async Task<IActionResult> Details(int? id)
         {
-            var movie = await FindAsync(id);
+            var movie = await repo.Get(id);
             return movie == null ? NotFound() : View(movie);
         }
         public IActionResult Create() => View();
@@ -45,14 +46,13 @@ namespace MvcMovie.Controllers
         public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if ( ! ModelState.IsValid) return View(movie);
-            db.Add(movie);
-            await db.SaveChangesAsync();
+            await repo.Add(movie);
             return RedirectToAction(nameof(Index));
 
         }
         public async Task<IActionResult> Edit(int? id)
         {
-            var movie = await FindAsync(id);
+            var movie = await repo.Get(id);
             return movie == null ? NotFound() : View(movie);
         }
         [HttpPost] [ValidateAntiForgeryToken]
@@ -60,24 +60,19 @@ namespace MvcMovie.Controllers
         {
             if (id != movie.Id) return NotFound();
             if ( ! ModelState.IsValid) return View(movie);
-            db.Update(movie);
-            await db.SaveChangesAsync();
+            await repo.Update(movie);
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Delete(int? id)
         {
-            var movie = await FindAsync(id);
+            var movie = await repo.Get(id);
             return movie == null ? NotFound() : View(movie);
         }
         [HttpPost, ActionName("Delete")] [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await db.Movie.FindAsync(id);
-            if (movie != null) db.Movie.Remove(movie);
-            await db.SaveChangesAsync();
+            await repo.Delete(id);
             return RedirectToAction(nameof(Index));
         }
-                                                     //kontrolli kas id võrdub null, kui on, saada null, muidu saada, mis db-st leiad
-        public async Task<Movie?> FindAsync(int? id) => id == null ? null : await db.Movie.FindAsync(id);
     }
 }
