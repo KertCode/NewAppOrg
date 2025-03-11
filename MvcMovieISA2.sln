@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{C10B205B-91D4-4DE4-B82B-5DA18185E7D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{66844907-90F8-4C3B-A998-5BC0812F102B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3574F46B-0C4C-4DB5-B130-A666D2A5E413} = {3574F46B-0C4C-4DB5-B130-A666D2A5E413}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{6AC01F8A-043E-4C10-945F-D7F6755AE925}"
 EndProject
@@ -13,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 	ProjectSection(ProjectDependencies) = postProject
 		{C10B205B-91D4-4DE4-B82B-5DA18185E7D3} = {C10B205B-91D4-4DE4-B82B-5DA18185E7D3}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aids", "Aids\Aids.csproj", "{3574F46B-0C4C-4DB5-B130-A666D2A5E413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +41,10 @@ Global
 		{111C2B89-004D-470A-962C-12B2F19E449E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{111C2B89-004D-470A-962C-12B2F19E449E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{111C2B89-004D-470A-962C-12B2F19E449E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3574F46B-0C4C-4DB5-B130-A666D2A5E413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3574F46B-0C4C-4DB5-B130-A666D2A5E413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3574F46B-0C4C-4DB5-B130-A666D2A5E413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3574F46B-0C4C-4DB5-B130-A666D2A5E413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
